@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# Helper functions
+
 
 
 def get_relevant_passage(query, db, n_results):
