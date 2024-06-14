@@ -8,11 +8,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-pdf_text = load_pdf(file_path="../examples/Khalil_sResumeAPR2024.pdf")
+pdf_text = load_pdf(file_path="./examples/Khalil_sResumeAPR2024.pdf")
 chunked_text = split_text(text=pdf_text)
 
 db, name = create_chroma_db(documents=chunked_text,
-                            path="../ChromaDB",
+                            path="./ChromaDB",
                             name="rag_experiment")
 
 db = load_chroma_collection(
