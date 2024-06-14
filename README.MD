@@ -1,11 +1,9 @@
-# Job Application Analyzer
+# Chat with your PDF using Gemini
 
 ## Description
 
 This project demonstrates a Retrieval-Augmented Generation (RAG) system leveraging ChromaDB for document storage and retrieval, and Gemini AI for generating embeddings and answers. The goal is to efficiently answer user queries by retrieving relevant passages from a database and generating comprehensive, user-friendly responses.
 
-### System Design
-![Alt text](./images/5.png)
 
 
 ## Usage
@@ -30,18 +28,23 @@ conda activate chat_pdf
 pip install -r requirements.txt
 ```
 
+### Step 4: Obtain Gemini-1.5-Pro API Key
+
+To use this application, you need to obtain an API key for Gemini-1.5-Pro from [Google AI Studio](https://aistudio.google.com/app/). Once obtained, follow these steps:
+
+1. Rename `.env.example` to `.env`.
+2. Paste your API key as the value for `GEMINI_API_KEY` in the `.env` file.
 
 
-
-### Step 6: Run the gradio app
+### Step 5: Run the Streamlit app
 
 ```bash
-python app.py
+streamlit run app.py
 ```
 Paste the following url in the browser 
 
 ```bash
-http://127.0.0.1:7860
+http://localhost:8501
 ```
 
 
