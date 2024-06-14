@@ -22,6 +22,24 @@ class GeminiEmbeddingFunction(EmbeddingFunction):
     """
 
     def __call__(self, input: Documents) -> Embeddings:
+        """
+        Custom method to generate embeddings for a given set of documents using the Gemini AI API.
+
+        This method overrides the __call__ method of the EmbeddingFunction class. It retrieves the
+        Gemini API key from environment variables, configures the GenAI API with the key, and then
+        generates embeddings for the input documents using the Gemini AI API.
+
+        Parameters:
+        - input (Documents): A collection of documents to be embedded. The Documents class is assumed to be
+                            defined elsewhere in the codebase.
+
+        Returns:
+        - Embeddings: Embeddings generated for the input documents. The Embeddings class is assumed to be
+                    defined elsewhere in the codebase.
+
+        Raises:
+        - ValueError: If the Gemini API key is not provided in the environment variables.
+        """
         gemini_api_key = os.getenv("GEMINI_API_KEY")
         if not gemini_api_key:
             raise ValueError(
