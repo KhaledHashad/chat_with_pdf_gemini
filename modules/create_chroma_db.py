@@ -1,7 +1,6 @@
 import chromadb
 from typing import List
-from generate_embeddings import GeminiEmbeddingFunction
-from load_pdf import chunked_text
+from .generate_embeddings import GeminiEmbeddingFunction
 
 
 def create_chroma_db(documents: List, path: str, name: str):
@@ -16,6 +15,7 @@ def create_chroma_db(documents: List, path: str, name: str):
     Returns:
     - Tuple[chromadb.Collection, str]: A tuple containing the created Chroma Collection and its name.
     """
+
     chroma_client = chromadb.PersistentClient(path=path)
     db = chroma_client.create_collection(
         name=name, embedding_function=GeminiEmbeddingFunction())
