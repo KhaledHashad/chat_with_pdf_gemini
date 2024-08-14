@@ -32,6 +32,8 @@ def get_relevant_passage(query, db, n_results):
     """
     passage = db.query(query_texts=[query], n_results=n_results)[
         'documents'][0]
+    print(len(db.query(query_texts=[query], n_results=n_results)[
+        'documents']))
     return passage
 
 
@@ -55,7 +57,7 @@ def make_rag_prompt(query, relevant_passage):
     # Escape special characters in the relevant passage
     escaped = relevant_passage.replace(
         "'", "").replace('"', "").replace("\n", " ")
-
+    #print(relevant_passage)
     # Generate the prompt
     prompt = (f"""You are a helpful and informative bot that answers questions using text from the reference passage included below. 
     Be sure to respond in a complete sentence, being comprehensive, including all relevant background information. 
@@ -132,7 +134,7 @@ def get_answer(db, query):
     It uses the get_relevant_passage, make_rag_prompt, and generate_answer functions to accomplish this.
     """
 
-    relevant_text = get_relevant_passage(query, db, n_results=3)
+    relevant_text = get_relevant_passage(query, db, n_results=1)
     prompt = make_rag_prompt(query, relevant_passage="".join(relevant_text))
     answer = generate_answer(prompt)
     return answer

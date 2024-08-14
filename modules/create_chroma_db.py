@@ -3,7 +3,7 @@ from typing import List
 from .generate_embeddings import GeminiEmbeddingFunction
 
 
-def create_chroma_db(documents: List, path: str, name: str) -> tuple[chromadb.Collection, str]:
+def create_chroma_db(documents: List, path: str, name: str):
     """
     Creates a Chroma database using the provided documents, path, and collection name.
 
