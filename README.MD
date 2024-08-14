@@ -4,7 +4,7 @@
 
 This project demonstrates a Retrieval-Augmented Generation (RAG) system leveraging ChromaDB for document storage and retrieval, and Gemini AI for generating embeddings and answers. The goal is to efficiently answer user queries by retrieving relevant passages from a database and generating comprehensive, user-friendly responses.
 
-
+.
 
 ## Usage
 
